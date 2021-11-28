@@ -1,0 +1,28 @@
+{
+  "name": "assignment3server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js",
+    "start": "firebase emulators:start && node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TNBruh/assignment3server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TNBruh/assignment3server/issues"
+  },
+  "homepage": "https://github.com/TNBruh/assignment3server#readme",
+  "dependencies": {
+    "@hapi/hapi": "^20.2.1",
+    "firebase-functions": "^3.16.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
