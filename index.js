@@ -1,5 +1,7 @@
 const Hapi = require('@hapi/hapi');
 const { default: axios } = require('axios');
+require("dotenv").config();
+
  
 const init = async () => {
   
