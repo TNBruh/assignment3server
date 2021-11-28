@@ -1,6 +1,5 @@
 const Hapi = require('@hapi/hapi');
-const functions = require("firebase-functions");
-const admin = require('firebase-admin');
+const { default: axios } = require('axios');
  
 const init = async () => {
   
@@ -12,7 +11,6 @@ const init = async () => {
     }
   });
 
-  admin.initializeApp();
 
   server.route({
     method: 'POST',
@@ -31,8 +29,14 @@ const init = async () => {
       }
 
       console.log('sending');
-      admin.messaging().send(payload);
+      //'http://10.0.2.2:5001/fractal-unj-9f50c/us-central1/amongus/'
+      axios.post(
+        'http://localhost:5001/fractal-unj-9f50c/us-central1/amongus',
+        body
+      ).then(() => {console.log('then')}).catch(() => {console.log('catch')});
       console.log('sent');
+
+      return {status: 200, message: "success"};
     }
   })
  
@@ -40,5 +44,5 @@ const init = async () => {
   console.log(`among us ${server.info.uri}`);
 };
  
- 
+console.log('######################');
 init();
